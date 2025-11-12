@@ -68,4 +68,15 @@ window.document.addEventListener("DOMContentLoaded", () => {
     let resultado = document.getElementById("resultado");
     resultado.innerHTML = `RESULTADO: ${input}`;
   });
+
+  document.getElementById('color').addEventListener('click', () => {
+    let input = document.getElementById("input-text").value;
+    let resultado = document.getElementById("resultado");
+    let color = document.getElementById('color').value;
+
+
+    resultado.innerHTML = `<p style="display: inline-block">RESULTADO:</p> <p style="color:${color}; display: inline-block">${input}</p>`
+
+  })
+
 });
