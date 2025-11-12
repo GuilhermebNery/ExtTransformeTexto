@@ -2,13 +2,19 @@ window.document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnMaiuscula").addEventListener("click", () => {
     let input = document.getElementById("input-text").value.toUpperCase();
     let resultado = document.getElementById("resultado");
-    resultado.innerHTML = `RESULTADO: ${input}`;
+    let color = document.getElementById('color').value;
+    resultado.innerHTML = `<p style="display: inline-block">RESULTADO:</p> <p style="color:${color}; display: inline-block">${input}</p>`
+    
   });
 
   document.getElementById("btnMinuscula").addEventListener("click", () => {
     let input = document.getElementById("input-text").value.toLowerCase();
     let resultado = document.getElementById("resultado");
-    resultado.innerHTML = `RESULTADO: ${input}`;
+    let color = document.getElementById('color').value;
+
+
+    resultado.innerHTML = `<p style="display: inline-block">RESULTADO:</p> <p style="color:${color}; display: inline-block">${input}</p>`
+    
   });
 
   //   document.getElementById("btnPrimeiraMaiuscula").addEventListener("click", () => {
@@ -30,6 +36,10 @@ window.document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", () => {
       let input = document.getElementById("input-text").value.toLowerCase();
       let resultado = document.getElementById("resultado");
+      let color = document.getElementById('color').value;
+
+
+    
 
       input = input.charAt(0).toUpperCase() + input.slice(1);
       const especial = ".!;?:";
@@ -51,7 +61,7 @@ window.document.addEventListener("DOMContentLoaded", () => {
       }
       input = newText;
 
-      resultado.innerHTML = `RESULTADO: ${input}`;
+      resultado.innerHTML = `<p style="display: inline-block">RESULTADO:</p> <p style="color:${color}; display: inline-block">${input}</p>`
     });
   // document.getElementById('btnPrimeiraMaiuscula').addEventListener("click", ()=>{
   //       let input = document.getElementById("input-text").value
@@ -68,15 +78,5 @@ window.document.addEventListener("DOMContentLoaded", () => {
     let resultado = document.getElementById("resultado");
     resultado.innerHTML = `RESULTADO: ${input}`;
   });
-
-  document.getElementById('color').addEventListener('click', () => {
-    let input = document.getElementById("input-text").value;
-    let resultado = document.getElementById("resultado");
-    let color = document.getElementById('color').value;
-
-
-    resultado.innerHTML = `<p style="display: inline-block">RESULTADO:</p> <p style="color:${color}; display: inline-block">${input}</p>`
-
-  })
-
+  
 });
