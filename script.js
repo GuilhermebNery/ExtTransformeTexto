@@ -31,11 +31,11 @@ document.getElementById('btnPrimeiraMaiuscula').addEventListener('click', () => 
 
     
     input = input.charAt(0).toUpperCase() + input.slice(1);
-
+    const especial = ".!;?:"
     
     let newText = '';
     for (let i = 0; i < input.length; i++) {
-        if (input.charAt(i) === '.' && input.charAt(i + 1) === ' ' && i + 2 < input.length) {
+        if (especial.includes(input.charAt(i)) && input.charAt(i + 1) === ' ' && i + 2 < input.length) {
             newText += input.charAt(i); 
             newText += input.charAt(i + 1); 
             newText += input.charAt(i + 2).toUpperCase(); 
@@ -47,4 +47,15 @@ document.getElementById('btnPrimeiraMaiuscula').addEventListener('click', () => 
     input = newText; 
 
     resultado.innerHTML = `RESULTADO: ${input}`;
-})});
+})
+// document.getElementById('btnPrimeiraMaiuscula').addEventListener("click", ()=>{
+//       let input = document.getElementById("input-text").value
+//       input = input.replace(/\.\s*([a-z])/g, (letra) => {
+//                               return letra.toUpperCase();
+//                             })
+//       let resultado = document.getElementById('resultado')
+//       resultado.innerHTML = `Resultado: ${input}`
+//     })
+
+});
+
